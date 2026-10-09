@@ -74,6 +74,28 @@
           </span>
         </button>
       </div>
+
+      {%- assign free_shipping_threshold = 5000 -%}
+      {%- if cart != empty -%}
+        <div class="bb-free-shipping-bar" style="margin: 1.2rem 1.5rem 0.5rem;">
+          {%- if cart.total_price >= free_shipping_threshold -%}
+            <p class="bb-free-shipping-bar__text">🎉 You've unlocked <strong>Free Urban Delivery!</strong></p>
+            <div class="bb-free-shipping-bar__track">
+              <div class="bb-free-shipping-bar__progress" style="width: 100%;"></div>
+            </div>
+          {%- else -%}
+            {%- assign amount_remaining = free_shipping_threshold | minus: cart.total_price -%}
+            {%- assign percent_progress = cart.total_price | times: 100.0 | divided_by: free_shipping_threshold -%}
+            <p class="bb-free-shipping-bar__text">
+              🌱 Add <strong>{{ amount_remaining | money }}</strong> more for <strong>Free Shipping!</strong>
+            </p>
+            <div class="bb-free-shipping-bar__track">
+              <div class="bb-free-shipping-bar__progress" style="width: {{ percent_progress }}%;"></div>
+            </div>
+          {%- endif -%}
+        </div>
+      {%- endif -%}
+
       <cart-drawer-items
         view-event-payload="{{ cart | standard_event_data: 'view', context: 'dialog' | escape }}"
         view-event-trigger="manual"
@@ -587,6 +609,23 @@
           >
             {{ 'sections.cart.checkout' | t }}
           </button>
+        </div>
+
+        <div class="bb-cart-trust-badges">
+          <div class="bb-cart-trust-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+              <path d="m9 12 2 2 4-4"></path>
+            </svg>
+            <span>30-Day Urban Thriving Guarantee</span>
+          </div>
+          <div class="bb-cart-trust-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect>
+              <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>
+            </svg>
+            <span>100% Recyclable Eco-Packaging</span>
+          </div>
         </div>
       </div>
     </div>

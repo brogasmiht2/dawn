@@ -1,0 +1,73 @@
+{% comment %}
+  Renders mobile-friendly sticky Add to Cart bar on product pages
+  Usage:
+  {% render 'sticky-add-to-cart', product: product %}
+{% endcomment %}
+
+{%- if product != blank and product.available -%}
+  <div id="bb-sticky-atc" class="bb-sticky-atc" aria-hidden="true">
+    <div class="bb-sticky-atc__inner">
+      <div class="bb-sticky-atc__product-info">
+        {%- if product.featured_image -%}
+          {{
+            product.featured_image
+            | image_url: width: 120
+            | image_tag:
+              loading: 'lazy',
+              class: 'bb-sticky-atc__thumbnail',
+              alt: product.title | escape
+          }}
+        {%- endif -%}
+        <div class="bb-sticky-atc__details">
+          <p class="bb-sticky-atc__title">{{ product.title | escape }}</p>
+          <div class="bb-sticky-atc__price">
+            <span id="bb-sticky-price">{{ product.selected_or_first_available_variant.price | money }}</span>
+            {%- if product.selected_or_first_available_variant.compare_at_price > product.selected_or_first_available_variant.price -%}
+              <s id="bb-sticky-compare-price" style="color: rgba(36,41,36,0.6); font-size: 1.15rem; margin-left: 0.4rem;">
+                {{ product.selected_or_first_available_variant.compare_at_price | money }}
+              </s>
+            {%- endif -%}
+          </div>
+        </div>
+      </div>
+
+      <div class="bb-sticky-atc__actions">
+        <button
+          type="button"
+          class="bb-sticky-atc__button"
+          id="bb-sticky-atc-submit"
+          onclick="document.querySelector('.product-form__buttons button[type=submit], .product-form form button[type=submit]')?.click();"
+        >
+          {{ 'products.product.add_to_cart' | t }}
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const stickyBar = document.getElementById('bb-sticky-atc');
+      if (!stickyBar) return;
+
+      const triggerElement = document.querySelector('.product-form__buttons, .product-form');
+      if (!triggerElement) return;
+
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (!entry.isIntersecting && entry.boundingClientRect.top < 0) {
+              stickyBar.classList.add('is-visible');
+              stickyBar.setAttribute('aria-hidden', 'false');
+            } else {
+              stickyBar.classList.remove('is-visible');
+              stickyBar.setAttribute('aria-hidden', 'true');
+            }
+          });
+        },
+        { threshold: 0 }
+      );
+
+      observer.observe(triggerElement);
+    });
+  </script>
+{%- endif -%}

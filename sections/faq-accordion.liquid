@@ -1,0 +1,190 @@
+{%- style -%}
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+  }
+
+  @media screen and (min-width: 750px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+{%- endstyle -%}
+
+<div class="color-{{ section.settings.color_scheme }} gradient section-{{ section.id }}-padding">
+  <div class="page-width">
+    {%- if section.settings.subheading != blank or section.settings.title != blank -%}
+      <div class="title-wrapper title-wrapper--no-top-margin center" style="margin-bottom: 3.5rem;">
+        {%- if section.settings.subheading != blank -%}
+          <span class="bb-eyebrow">{{ section.settings.subheading | escape }}</span>
+        {%- endif -%}
+        {%- if section.settings.title != blank -%}
+          <h2 class="title inline-richtext {{ section.settings.heading_size }}">
+            {{ section.settings.title }}
+          </h2>
+        {%- endif -%}
+        {%- if section.settings.description != blank -%}
+          <div class="rich-text__text rte" style="max-width: 650px; margin: 0 auto;">
+            {{ section.settings.description }}
+          </div>
+        {%- endif -%}
+      </div>
+    {%- endif -%}
+
+    <div class="bb-faq-container">
+      {%- for block in section.blocks -%}
+        <details class="bb-faq-item" {{ block.shopify_attributes }}>
+          <summary class="bb-faq-summary">
+            <span>{{ block.settings.question | escape }}</span>
+            <svg class="bb-faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
+          </summary>
+          <div class="bb-faq-content rte">
+            {{ block.settings.answer }}
+          </div>
+        </details>
+      {%- endfor -%}
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "FAQ accordion",
+  "tag": "section",
+  "class": "section",
+  "disabled_on": {
+    "groups": ["header", "footer"]
+  },
+  "settings": [
+    {
+      "type": "text",
+      "id": "subheading",
+      "label": "Subheading",
+      "default": "Got Questions?"
+    },
+    {
+      "type": "inline_richtext",
+      "id": "title",
+      "label": "Heading",
+      "default": "Frequently Asked Questions"
+    },
+    {
+      "type": "select",
+      "id": "heading_size",
+      "options": [
+        {
+          "value": "h2",
+          "label": "Medium"
+        },
+        {
+          "value": "h1",
+          "label": "Large"
+        },
+        {
+          "value": "h0",
+          "label": "Extra large"
+        }
+      ],
+      "default": "h1",
+      "label": "Heading size"
+    },
+    {
+      "type": "richtext",
+      "id": "description",
+      "label": "Description",
+      "default": "<p>Common answers regarding apartment weight limits, railing mounts, drainage care, and our urban guarantee.</p>"
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "Color scheme",
+      "default": "scheme-1"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Top padding",
+      "default": 48
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Bottom padding",
+      "default": 48
+    }
+  ],
+  "blocks": [
+    {
+      "type": "faq_item",
+      "name": "FAQ item",
+      "settings": [
+        {
+          "type": "text",
+          "id": "question",
+          "label": "Question",
+          "default": "Will the railing planters fit my apartment balcony?"
+        },
+        {
+          "type": "richtext",
+          "id": "answer",
+          "label": "Answer",
+          "default": "<p>Yes. Our railing brackets are fully adjustable and fit round, square, or flat balcony railings from 1.5 inches up to 4.5 inches wide, with rubberized silicone pads that protect your rental railing from scratches.</p>"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "FAQ accordion",
+      "blocks": [
+        {
+          "type": "faq_item",
+          "settings": {
+            "question": "Will the railing planters fit my apartment railing?",
+            "answer": "<p>Yes. Our universal mounting brackets adjust easily to fit round, square, and flat metal or wood railings from 1.5 inches up to 4.5 inches wide. They include non-marking rubber pads so your rental property is never scratched.</p>"
+          }
+        },
+        {
+          "type": "faq_item",
+          "settings": {
+            "question": "How do self-watering planters prevent dripping on downstairs neighbors?",
+            "answer": "<p>Every BalconyBloomCo planter features an internal overflow reservoir with an integrated drainage plug. Excess water collects safely in the bottom basin where plants draw it up through capillary action, completely eliminating dirty drips onto balconies below.</p>"
+          }
+        },
+        {
+          "type": "faq_item",
+          "settings": {
+            "question": "Are these planters safe for apartment balcony weight limits?",
+            "answer": "<p>Absolutely. We use lightweight aerospace-grade aluminum and durable composite resins that weigh up to 60% less than traditional terracotta or concrete, while retaining high structural rigidity against strong wind gusts.</p>"
+          }
+        },
+        {
+          "type": "faq_item",
+          "settings": {
+            "question": "Can they stay outside during freezing winter weather?",
+            "answer": "<p>Yes. Our planters are frost-resistant down to -20°F (-28°C) and will not crack or become brittle under freezing conditions. We recommend emptying excess standing water before the first freeze.</p>"
+          }
+        },
+        {
+          "type": "faq_item",
+          "settings": {
+            "question": "What is the 30-Day Urban Thriving Guarantee?",
+            "answer": "<p>We want you to love your balcony oasis. If your products do not fit your space or make gardening easier within 30 days, reach out to our team for hassle-free returns or exchanges.</p>"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

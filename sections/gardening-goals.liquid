@@ -1,0 +1,205 @@
+{%- style -%}
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+  }
+
+  @media screen and (min-width: 750px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+{%- endstyle -%}
+
+<div class="color-{{ section.settings.color_scheme }} gradient section-{{ section.id }}-padding">
+  <div class="page-width">
+    {%- if section.settings.subheading != blank or section.settings.title != blank -%}
+      <div class="title-wrapper title-wrapper--no-top-margin center" style="margin-bottom: 2rem;">
+        {%- if section.settings.subheading != blank -%}
+          <span class="bb-eyebrow">{{ section.settings.subheading | escape }}</span>
+        {%- endif -%}
+        {%- if section.settings.title != blank -%}
+          <h2 class="title inline-richtext {{ section.settings.heading_size }}">
+            {{ section.settings.title }}
+          </h2>
+        {%- endif -%}
+        {%- if section.settings.description != blank -%}
+          <div class="rich-text__text rte" style="max-width: 650px; margin: 0 auto;">
+            {{ section.settings.description }}
+          </div>
+        {%- endif -%}
+      </div>
+    {%- endif -%}
+
+    <div class="bb-goals-grid">
+      {%- for block in section.blocks -%}
+        <div class="bb-goal-card" {{ block.shopify_attributes }}>
+          <div class="bb-goal-card__header">
+            {%- if block.settings.badge != blank -%}
+              <span class="bb-goal-card__badge">{{ block.settings.badge | escape }}</span>
+            {%- endif -%}
+            <h3 class="bb-goal-card__title">{{ block.settings.title | escape }}</h3>
+          </div>
+          <div class="bb-goal-card__body">
+            <p class="bb-goal-card__desc">{{ block.settings.description | escape }}</p>
+            <a
+              href="{{ block.settings.link | default: routes.all_products_collection_url }}"
+              class="button button--secondary bb-goal-card__cta"
+            >
+              {{ block.settings.button_label | default: 'Shop Solutions' }}
+            </a>
+          </div>
+        </div>
+      {%- endfor -%}
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Shop by gardening goal",
+  "tag": "section",
+  "class": "section",
+  "disabled_on": {
+    "groups": ["header", "footer"]
+  },
+  "settings": [
+    {
+      "type": "text",
+      "id": "subheading",
+      "label": "Subheading",
+      "default": "Tailored To Your Lifestyle"
+    },
+    {
+      "type": "inline_richtext",
+      "id": "title",
+      "label": "Heading",
+      "default": "Shop by Gardening Goal"
+    },
+    {
+      "type": "select",
+      "id": "heading_size",
+      "options": [
+        {
+          "value": "h2",
+          "label": "Medium"
+        },
+        {
+          "value": "h1",
+          "label": "Large"
+        },
+        {
+          "value": "h0",
+          "label": "Extra large"
+        }
+      ],
+      "default": "h1",
+      "label": "Heading size"
+    },
+    {
+      "type": "richtext",
+      "id": "description",
+      "label": "Description",
+      "default": "<p>Select the botanical ambition that best fits your balcony layout, sunlight hours, and weekly routine.</p>"
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "Color scheme",
+      "default": "scheme-1"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Top padding",
+      "default": 48
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Bottom padding",
+      "default": 48
+    }
+  ],
+  "blocks": [
+    {
+      "type": "goal",
+      "name": "Gardening goal",
+      "settings": [
+        {
+          "type": "text",
+          "id": "badge",
+          "label": "Badge",
+          "default": "Culinary Focus"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Goal Title",
+          "default": "Grow Fresh Kitchen Herbs"
+        },
+        {
+          "type": "text",
+          "id": "description",
+          "label": "Description",
+          "default": "Harvest organic basil, rosemary, and mint right outside your kitchen window, even with just 2 hours of direct sun."
+        },
+        {
+          "type": "url",
+          "id": "link",
+          "label": "Collection / Product link"
+        },
+        {
+          "type": "text",
+          "id": "button_label",
+          "label": "Button text",
+          "default": "Shop Herb Kits"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Shop by gardening goal",
+      "blocks": [
+        {
+          "type": "goal",
+          "settings": {
+            "badge": "Fresh Harvest",
+            "title": "Grow Fresh Kitchen Herbs",
+            "description": "Harvest organic basil, rosemary, and mint right outside your kitchen window, even with just 2 hours of direct sun.",
+            "button_label": "Shop Herb Kits"
+          }
+        },
+        {
+          "type": "goal",
+          "settings": {
+            "badge": "Space Maximizer",
+            "title": "Save Space & Grow Upward",
+            "description": "Utilize balcony walls, railing posts, and railings with vertical trellises, hanging troughs, and tiered stands.",
+            "button_label": "Explore Vertical Planters"
+          }
+        },
+        {
+          "type": "goal",
+          "settings": {
+            "badge": "Low Maintenance",
+            "title": "Simplify Daily Watering",
+            "description": "Self-watering planters with subirrigation reservoirs and long-reach drip cans keep your greenery hydrated effortlessly.",
+            "button_label": "See Smart Watering"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

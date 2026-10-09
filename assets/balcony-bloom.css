@@ -1,0 +1,799 @@
+/* ==========================================================================
+   BalconyBloomCo — Premium Botanical Design System & Components
+   Brand: BalconyBloomCo | Tagline: Grow More in Less Space.
+   ========================================================================== */
+
+:root {
+  --bb-forest-green: #244B3A;
+  --bb-sage-green: #91A88F;
+  --bb-warm-ivory: #F8F6EF;
+  --bb-terracotta: #CE7958;
+  --bb-charcoal: #242924;
+  --bb-white: #FFFFFF;
+  --bb-soft-sage: #EEF3ED;
+  --bb-border-subtle: rgba(36, 75, 58, 0.12);
+  --bb-border-medium: rgba(36, 75, 58, 0.22);
+  --bb-shadow-soft: 0 4px 20px rgba(36, 41, 36, 0.06);
+  --bb-shadow-hover: 0 8px 28px rgba(36, 41, 36, 0.12);
+  --bb-radius-card: 10px;
+  --bb-radius-pill: 30px;
+  --bb-radius-btn: 6px;
+  --bb-transition: all 0.25s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+/* --------------------------------------------------------------------------
+   Global Typography & Editorial Aesthetics
+   -------------------------------------------------------------------------- */
+h1, h2, h3, .h0, .h1, .h2, .h3,
+.banner__heading,
+.rich-text__heading {
+  font-family: var(--font-heading-family, "Playfair Display", "Cormorant Garamond", Garamond, Georgia, serif);
+  letter-spacing: -0.015em;
+  font-weight: 500;
+  line-height: 1.25;
+}
+
+.banner__heading {
+  letter-spacing: -0.02em;
+}
+
+.caption-large, .subheading, .bb-eyebrow {
+  display: inline-block;
+  font-family: var(--font-body-family, sans-serif);
+  font-size: 1.2rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  font-weight: 600;
+  color: var(--bb-terracotta);
+  margin-bottom: 0.8rem;
+}
+
+/* --------------------------------------------------------------------------
+   Brand Badges & Pill Tags
+   -------------------------------------------------------------------------- */
+.bb-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  padding: 0.35rem 0.85rem;
+  border-radius: var(--bb-radius-pill);
+  line-height: 1.2;
+}
+
+.bb-badge--terracotta {
+  background-color: var(--bb-terracotta);
+  color: #FFFFFF;
+}
+
+.bb-badge--sage {
+  background-color: var(--bb-sage-green);
+  color: #FFFFFF;
+}
+
+.bb-badge--forest {
+  background-color: var(--bb-forest-green);
+  color: var(--bb-warm-ivory);
+}
+
+.bb-badge--outline {
+  border: 1px solid var(--bb-forest-green);
+  color: var(--bb-forest-green);
+  background-color: transparent;
+}
+
+/* Native Dawn Badge Refinements */
+.badge {
+  border-radius: var(--bb-radius-pill);
+  font-size: 1.15rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  padding: 0.4rem 1rem;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
+}
+
+/* --------------------------------------------------------------------------
+   Refined Product Cards
+   -------------------------------------------------------------------------- */
+.card-wrapper {
+  transition: var(--bb-transition);
+}
+
+.card--standard {
+  border-radius: var(--bb-radius-card);
+  overflow: hidden;
+  border: 1px solid var(--bb-border-subtle);
+  background: var(--bb-white);
+  transition: var(--bb-transition);
+}
+
+.card-wrapper:hover .card--standard {
+  border-color: var(--bb-border-medium);
+  box-shadow: var(--bb-shadow-soft);
+  transform: translateY(-3px);
+}
+
+.card__media {
+  border-radius: var(--bb-radius-card) var(--bb-radius-card) 0 0;
+  overflow: hidden;
+}
+
+.card__media img {
+  transition: transform 0.4s ease;
+}
+
+.card-wrapper:hover .card__media img {
+  transform: scale(1.03);
+}
+
+.card__heading {
+  font-family: var(--font-body-family, sans-serif);
+  font-size: 1.6rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  color: var(--bb-charcoal);
+  margin-top: 0.4rem;
+}
+
+.price {
+  font-weight: 600;
+  color: var(--bb-forest-green);
+}
+
+.price--on-sale .price-item--sale {
+  color: var(--bb-terracotta);
+}
+
+/* --------------------------------------------------------------------------
+   Buttons & Interactive Elements
+   -------------------------------------------------------------------------- */
+.button, .shopify-challenge__button, .customer button {
+  border-radius: var(--bb-radius-btn);
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  transition: var(--bb-transition);
+}
+
+.button:hover, .shopify-challenge__button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 14px rgba(36, 75, 58, 0.2);
+}
+
+.button--secondary {
+  border: 1.5px solid currentColor;
+}
+
+/* --------------------------------------------------------------------------
+   Header & Announcement Bar
+   -------------------------------------------------------------------------- */
+.announcement-bar {
+  letter-spacing: 0.02em;
+  font-size: 1.3rem;
+  font-weight: 500;
+}
+
+.announcement-bar__message {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+}
+
+.header__heading-link .h2 {
+  font-family: var(--font-heading-family, serif);
+  font-weight: 600;
+  font-size: 2.6rem;
+  letter-spacing: -0.02em;
+  color: var(--bb-forest-green);
+}
+
+.header__menu-item {
+  font-weight: 500;
+  letter-spacing: 0.02em;
+}
+
+/* --------------------------------------------------------------------------
+   Shop by Category Section
+   -------------------------------------------------------------------------- */
+.bb-category-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+@media screen and (min-width: 990px) {
+  .bb-category-grid--5-col {
+    grid-template-columns: repeat(5, 1fr);
+  }
+  .bb-category-grid--4-col {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.bb-category-card {
+  position: relative;
+  background-color: var(--bb-white);
+  border: 1px solid var(--bb-border-subtle);
+  border-radius: var(--bb-radius-card);
+  padding: 1.6rem;
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+  transition: var(--bb-transition);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.02);
+  overflow: hidden;
+}
+
+.bb-category-card:hover {
+  border-color: var(--bb-forest-green);
+  transform: translateY(-4px);
+  box-shadow: var(--bb-shadow-hover);
+}
+
+.bb-category-card__image-box {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  border-radius: 6px;
+  background-color: var(--bb-soft-sage);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  margin-bottom: 1.4rem;
+}
+
+.bb-category-card__image-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.bb-category-card:hover .bb-category-card__image-box img {
+  transform: scale(1.05);
+}
+
+.bb-category-card__icon-placeholder {
+  width: 64px;
+  height: 64px;
+  color: var(--bb-forest-green);
+  opacity: 0.85;
+}
+
+.bb-category-card__tag {
+  font-size: 1.1rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--bb-terracotta);
+  margin-bottom: 0.4rem;
+}
+
+.bb-category-card__title {
+  font-size: 1.7rem;
+  font-family: var(--font-heading-family, serif);
+  font-weight: 600;
+  color: var(--bb-charcoal);
+  margin: 0 0 0.5rem;
+  line-height: 1.3;
+}
+
+.bb-category-card__desc {
+  font-size: 1.3rem;
+  color: rgba(36, 41, 36, 0.75);
+  line-height: 1.4;
+  margin: 0 0 1rem;
+  flex-grow: 1;
+}
+
+.bb-category-card__link-text {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: var(--bb-forest-green);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  margin-top: auto;
+}
+
+.bb-category-card:hover .bb-category-card__link-text {
+  color: var(--bb-terracotta);
+}
+
+/* --------------------------------------------------------------------------
+   Brand Benefits / Value Props Section
+   -------------------------------------------------------------------------- */
+.bb-benefits-section {
+  padding: 5rem 0;
+  border-top: 1px solid var(--bb-border-subtle);
+  border-bottom: 1px solid var(--bb-border-subtle);
+}
+
+.bb-benefits-grid {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 2.5rem;
+}
+
+@media screen and (min-width: 750px) {
+  .bb-benefits-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media screen and (min-width: 990px) {
+  .bb-benefits-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.bb-benefit-item {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 2rem;
+  background-color: var(--bb-white);
+  border-radius: var(--bb-radius-card);
+  border: 1px solid var(--bb-border-subtle);
+  transition: var(--bb-transition);
+}
+
+.bb-benefit-item:hover {
+  border-color: var(--bb-sage-green);
+  box-shadow: var(--bb-shadow-soft);
+  transform: translateY(-2px);
+}
+
+.bb-benefit-icon-wrapper {
+  width: 52px;
+  height: 52px;
+  border-radius: 12px;
+  background-color: var(--bb-soft-sage);
+  color: var(--bb-forest-green);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.4rem;
+}
+
+.bb-benefit-icon-wrapper svg {
+  width: 28px;
+  height: 28px;
+}
+
+.bb-benefit-title {
+  font-family: var(--font-heading-family, serif);
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: var(--bb-charcoal);
+  margin: 0 0 0.6rem;
+  line-height: 1.3;
+}
+
+.bb-benefit-text {
+  font-size: 1.35rem;
+  line-height: 1.5;
+  color: rgba(36, 41, 36, 0.78);
+  margin: 0;
+}
+
+/* --------------------------------------------------------------------------
+   Gardening Goals Section
+   -------------------------------------------------------------------------- */
+.bb-goals-grid {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 2.4rem;
+  margin-top: 3.5rem;
+}
+
+@media screen and (min-width: 750px) {
+  .bb-goals-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.bb-goal-card {
+  position: relative;
+  background-color: var(--bb-white);
+  border: 1px solid var(--bb-border-subtle);
+  border-radius: var(--bb-radius-card);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: var(--bb-transition);
+}
+
+.bb-goal-card:hover {
+  border-color: var(--bb-forest-green);
+  transform: translateY(-4px);
+  box-shadow: var(--bb-shadow-hover);
+}
+
+.bb-goal-card__header {
+  padding: 2.4rem 2.4rem 1.6rem;
+  background: linear-gradient(180deg, var(--bb-soft-sage) 0%, var(--bb-white) 100%);
+}
+
+.bb-goal-card__badge {
+  display: inline-block;
+  font-size: 1.1rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--bb-forest-green);
+  background-color: rgba(36, 75, 58, 0.1);
+  padding: 0.3rem 0.8rem;
+  border-radius: var(--bb-radius-pill);
+  margin-bottom: 1.2rem;
+}
+
+.bb-goal-card__title {
+  font-family: var(--font-heading-family, serif);
+  font-size: 2.2rem;
+  font-weight: 600;
+  color: var(--bb-charcoal);
+  margin: 0 0 0.8rem;
+  line-height: 1.25;
+}
+
+.bb-goal-card__body {
+  padding: 0 2.4rem 2.4rem;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.bb-goal-card__desc {
+  font-size: 1.4rem;
+  line-height: 1.55;
+  color: rgba(36, 41, 36, 0.8);
+  margin: 0 0 1.8rem;
+  flex-grow: 1;
+}
+
+.bb-goal-card__cta {
+  align-self: flex-start;
+  margin-top: auto;
+}
+
+/* --------------------------------------------------------------------------
+   Gardening Guides / Inspiration Section
+   -------------------------------------------------------------------------- */
+.bb-guides-grid {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 2.5rem;
+  margin-top: 3.5rem;
+}
+
+@media screen and (min-width: 750px) {
+  .bb-guides-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.bb-guide-card {
+  background-color: var(--bb-white);
+  border: 1px solid var(--bb-border-subtle);
+  border-radius: var(--bb-radius-card);
+  overflow: hidden;
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+  transition: var(--bb-transition);
+}
+
+.bb-guide-card:hover {
+  border-color: var(--bb-forest-green);
+  box-shadow: var(--bb-shadow-hover);
+  transform: translateY(-4px);
+}
+
+.bb-guide-card__image-wrap {
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  background-color: var(--bb-soft-sage);
+  overflow: hidden;
+  position: relative;
+}
+
+.bb-guide-card__image-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.bb-guide-card:hover .bb-guide-card__image-wrap img {
+  transform: scale(1.05);
+}
+
+.bb-guide-card__content {
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.bb-guide-card__meta {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 0.8rem;
+  font-size: 1.2rem;
+  color: var(--bb-terracotta);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.bb-guide-card__title {
+  font-family: var(--font-heading-family, serif);
+  font-size: 2rem;
+  font-weight: 600;
+  color: var(--bb-charcoal);
+  margin: 0 0 0.8rem;
+  line-height: 1.3;
+}
+
+.bb-guide-card__excerpt {
+  font-size: 1.35rem;
+  color: rgba(36, 41, 36, 0.75);
+  line-height: 1.5;
+  margin: 0 0 1.4rem;
+  flex-grow: 1;
+}
+
+.bb-guide-card__read-link {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: var(--bb-forest-green);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  margin-top: auto;
+}
+
+/* --------------------------------------------------------------------------
+   FAQ Accordion Section
+   -------------------------------------------------------------------------- */
+.bb-faq-container {
+  max-width: 820px;
+  margin: 0 auto;
+}
+
+.bb-faq-item {
+  border: 1px solid var(--bb-border-subtle);
+  border-radius: var(--bb-radius-card);
+  margin-bottom: 1.2rem;
+  background: var(--bb-white);
+  overflow: hidden;
+  transition: var(--bb-transition);
+}
+
+.bb-faq-item[open] {
+  border-color: var(--bb-forest-green);
+  box-shadow: var(--bb-shadow-soft);
+}
+
+.bb-faq-summary {
+  padding: 1.8rem 2.2rem;
+  font-family: var(--font-heading-family, serif);
+  font-size: 1.85rem;
+  font-weight: 600;
+  color: var(--bb-charcoal);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  user-select: none;
+  list-style: none;
+}
+
+.bb-faq-summary::-webkit-details-marker {
+  display: none;
+}
+
+.bb-faq-summary:hover {
+  color: var(--bb-forest-green);
+}
+
+.bb-faq-icon {
+  width: 22px;
+  height: 22px;
+  flex-shrink: 0;
+  margin-left: 1.5rem;
+  transition: transform 0.25s ease;
+  color: var(--bb-forest-green);
+}
+
+.bb-faq-item[open] .bb-faq-icon {
+  transform: rotate(180deg);
+}
+
+.bb-faq-content {
+  padding: 0 2.2rem 2.2rem;
+  font-size: 1.5rem;
+  line-height: 1.6;
+  color: rgba(36, 41, 36, 0.85);
+  border-top: 1px dashed var(--bb-border-subtle);
+  margin-top: 0.5rem;
+  padding-top: 1.4rem;
+}
+
+/* --------------------------------------------------------------------------
+   Cart Drawer: Free Shipping Bar & Botanical Badges
+   -------------------------------------------------------------------------- */
+.bb-free-shipping-bar {
+  background-color: var(--bb-soft-sage);
+  border: 1px solid var(--bb-border-subtle);
+  border-radius: 8px;
+  padding: 1.2rem 1.6rem;
+  margin: 1rem 0 1.5rem;
+}
+
+.bb-free-shipping-bar__text {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: var(--bb-charcoal);
+  margin: 0 0 0.8rem;
+  text-align: center;
+}
+
+.bb-free-shipping-bar__track {
+  width: 100%;
+  height: 7px;
+  background-color: rgba(36, 75, 58, 0.15);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.bb-free-shipping-bar__progress {
+  height: 100%;
+  background: linear-gradient(90deg, var(--bb-sage-green), var(--bb-forest-green));
+  border-radius: 4px;
+  transition: width 0.4s ease;
+}
+
+.bb-cart-trust-badges {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  padding: 1.2rem;
+  background-color: var(--bb-warm-ivory);
+  border-radius: 8px;
+  border: 1px solid var(--bb-border-subtle);
+  margin-top: 1.5rem;
+  font-size: 1.25rem;
+  color: var(--bb-charcoal);
+}
+
+.bb-cart-trust-item {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  font-weight: 500;
+}
+
+.bb-cart-trust-item svg {
+  width: 16px;
+  height: 16px;
+  color: var(--bb-forest-green);
+  flex-shrink: 0;
+}
+
+/* --------------------------------------------------------------------------
+   Sticky Mobile Add to Cart (Product Page)
+   -------------------------------------------------------------------------- */
+.bb-sticky-atc {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  background-color: var(--bb-white);
+  border-top: 1px solid var(--bb-border-medium);
+  box-shadow: 0 -4px 16px rgba(0, 0, 0, 0.08);
+  padding: 1rem 1.6rem;
+  transform: translateY(100%);
+  opacity: 0;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  padding-bottom: calc(1rem + env(safe-area-inset-bottom, 0px));
+}
+
+.bb-sticky-atc.is-visible {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.bb-sticky-atc__inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.2rem;
+}
+
+.bb-sticky-atc__product-info {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+  min-width: 0;
+}
+
+.bb-sticky-atc__thumbnail {
+  width: 44px;
+  height: 44px;
+  border-radius: 6px;
+  object-fit: cover;
+  border: 1px solid var(--bb-border-subtle);
+  flex-shrink: 0;
+}
+
+.bb-sticky-atc__details {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.bb-sticky-atc__title {
+  font-size: 1.35rem;
+  font-weight: 600;
+  color: var(--bb-charcoal);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin: 0;
+}
+
+.bb-sticky-atc__price {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: var(--bb-forest-green);
+}
+
+.bb-sticky-atc__actions {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-shrink: 0;
+}
+
+.bb-sticky-atc__button {
+  background-color: var(--bb-forest-green);
+  color: #FFFFFF;
+  border: none;
+  border-radius: var(--bb-radius-btn);
+  padding: 0.9rem 1.8rem;
+  font-size: 1.35rem;
+  font-weight: 600;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: var(--bb-transition);
+}
+
+.bb-sticky-atc__button:hover {
+  background-color: var(--bb-terracotta);
+}
+
+/* --------------------------------------------------------------------------
+   Accessibility & Reduced Motion
+   -------------------------------------------------------------------------- */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+:focus-visible {
+  outline: 2px solid var(--bb-forest-green) !important;
+  outline-offset: 3px !important;
+}

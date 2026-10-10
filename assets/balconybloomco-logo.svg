@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 60" width="320" height="60" fill="none">
+  <!-- Botanical Sprout Emblem -->
+  <g transform="translate(4, 8)">
+    <circle cx="22" cy="22" r="21" fill="#EEF3ED" stroke="#244B3A" stroke-width="1.5"/>
+    <!-- Planter Box Outline -->
+    <path d="M12 28h20l-2 7H14l-2-7z" fill="#244B3A"/>
+    <!-- Railing Horizontal Bar -->
+    <line x1="8" y1="26" x2="36" y2="26" stroke="#244B3A" stroke-width="2" stroke-linecap="round"/>
+    <!-- Organic Thriving Leaves -->
+    <path d="M22 26c0-6 4-12 10-14-1 6-5 12-10 14z" fill="#91A88F"/>
+    <path d="M22 26c0-5-4-10-9-12 1 5 5 10 9 12z" fill="#244B3A"/>
+    <!-- Terracotta Flower Bud Accent -->
+    <circle cx="22" cy="11" r="2.5" fill="#CE7958"/>
+  </g>
+  <!-- Brand Typography -->
+  <text x="60" y="34" font-family="'Cormorant Garamond', Garamond, 'Playfair Display', Georgia, serif" font-size="25" font-weight="600" fill="#244B3A" letter-spacing="-0.02em">
+    BalconyBloom<tspan fill="#CE7958" font-family="'Assistant', sans-serif" font-size="19" font-weight="700">Co</tspan>
+  </text>
+  <!-- Subtle Tagline -->
+  <text x="61" y="47" font-family="'Assistant', sans-serif" font-size="8.5" font-weight="600" fill="#91A88F" letter-spacing="0.14em">
+    GROW MORE IN LESS SPACE
+  </text>
+</svg>

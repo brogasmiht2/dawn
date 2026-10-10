@@ -205,7 +205,14 @@
             }}
           </div>
         {%- else -%}
-          <span class="h2">{{ shop.name }}</span>
+          <img
+            src="{{ 'balconybloomco-logo.svg' | asset_url }}"
+            alt="{{ shop.name | default: 'BalconyBloomCo' }}"
+            class="header__heading-logo"
+            width="220"
+            height="42"
+            style="width: auto; max-height: 44px; display: block;"
+          >
         {%- endif -%}
       </a>
       {%- if request.page_type == 'index' -%}
@@ -248,7 +255,14 @@
             }}
           </div>
         {%- else -%}
-          <span class="h2">{{ shop.name }}</span>
+          <img
+            src="{{ 'balconybloomco-logo.svg' | asset_url }}"
+            alt="{{ shop.name | default: 'BalconyBloomCo' }}"
+            class="header__heading-logo"
+            width="220"
+            height="42"
+            style="width: auto; max-height: 44px; display: block;"
+          >
         {%- endif -%}
       </a>
       {%- if request.page_type == 'index' -%}

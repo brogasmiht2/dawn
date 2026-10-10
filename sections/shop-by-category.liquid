@@ -54,14 +54,7 @@
               <div class="bb-category-card__icon-placeholder">
                 {%- case forloop.index -%}
                   {%- when 1 -%}
-                    {% comment %} Railing Planter Icon {% endcomment %}
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-                      <rect x="2" y="8" width="20" height="12" rx="2"></rect>
-                      <path d="M4 8V4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v4"></path>
-                      <path d="M8 12v4"></path>
-                      <path d="M12 12v4"></path>
-                      <path d="M16 12v4"></path>
-                    </svg>
+                    <img src="{{ 'category-railing-planters.jpg' | asset_url }}" alt="Railing Planters" loading="lazy" style="width: 100%; height: 100%; object-fit: cover;">
                   {%- when 2 -%}
                     {% comment %} Precision Tools Icon {% endcomment %}
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">

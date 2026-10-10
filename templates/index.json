@@ -13,14 +13,14 @@
         "text": {
           "type": "text",
           "settings": {
-            "text": "Thoughtfully engineered planters, ergonomic tools, and vertical growing systems designed for balconies, small apartments, and urban plant lovers.",
+            "text": "Weatherproof railing planters, self-watering flower boxes, and hanging wall systems engineered for apartment balconies and small-space living.",
             "text_style": "body"
           }
         },
         "button": {
           "type": "buttons",
           "settings": {
-            "button_label_1": "Shop Gardening Essentials",
+            "button_label_1": "Shop Railing Planters",
             "button_link_1": "shopify://collections/all",
             "button_style_secondary_1": false,
             "button_label_2": "Explore Balcony Guides",
@@ -35,10 +35,10 @@
         "button"
       ],
       "settings": {
-        "image_overlay_opacity": 40,
+        "image_overlay_opacity": 30,
         "image_height": "large",
         "desktop_content_position": "middle-center",
-        "show_text_box": false,
+        "show_text_box": true,
         "image_behavior": "none",
         "desktop_content_alignment": "center",
         "color_scheme": "scheme-3",
@@ -50,63 +50,63 @@
     "shop_by_category": {
       "type": "shop-by-category",
       "blocks": {
-        "cat_planters": {
+        "cat_railing_boxes": {
           "type": "category",
           "settings": {
-            "badge": "Space Saver",
-            "title": "Railing & Wall Planters",
-            "description": "Secure universal brackets and lightweight profiles that keep your balcony floor clear.",
+            "badge": "Bestseller",
+            "title": "Railing Planters & Flower Boxes",
+            "description": "Weatherproof 16\", 24\", and 40\" resin planters engineered with secure universal railing brackets.",
             "link": "shopify://collections/all",
-            "link_text": "Explore Planters"
+            "link_text": "Shop Railing Boxes"
           }
         },
-        "cat_tools": {
+        "cat_hanging_wall": {
           "type": "category",
           "settings": {
-            "badge": "Ergonomic & Compact",
-            "title": "Precision Small-Space Tools",
-            "description": "Short-handle trowels, snips, and soil scoops designed for potting on small tables.",
+            "badge": "Space Maximizer",
+            "title": "Hanging Wall & Window Boxes",
+            "description": "Large 40\" rectangular flower boxes with window and wall brackets to green any vertical outdoor surface.",
             "link": "shopify://collections/all",
-            "link_text": "Shop Tools"
+            "link_text": "Shop Wall Planters"
           }
         },
-        "cat_watering": {
+        "cat_self_watering": {
           "type": "category",
           "settings": {
-            "badge": "No-Drip Flow",
-            "title": "Compact Watering Solutions",
-            "description": "Long-spout cans and gentle misters that prevent spills on neighbors below.",
+            "badge": "Smart Subirrigation",
+            "title": "Self-Watering Planter Systems",
+            "description": "Built-in moisture reservoirs with drainage holes to protect roots and prevent balcony drips.",
             "link": "shopify://collections/all",
-            "link_text": "See Watering"
+            "link_text": "See Self-Watering"
           }
         },
-        "cat_vertical": {
+        "cat_multipacks": {
           "type": "category",
           "settings": {
-            "badge": "Grow Upward",
-            "title": "Vertical Garden Trellises",
-            "description": "Climbing supports and modular wall trellises to expand your growing area.",
+            "badge": "2-Pack Value",
+            "title": "Balcony Multi-Pack Bundles",
+            "description": "Convenient 2-pack sets that create a balanced, uniform botanical perimeter across your balcony.",
             "link": "shopify://collections/all",
-            "link_text": "View Trellises"
+            "link_text": "Explore 2-Packs"
           }
         },
-        "cat_herbs": {
+        "cat_hardware": {
           "type": "category",
           "settings": {
-            "badge": "Beginner Friendly",
-            "title": "Windowsill Herb Kits",
-            "description": "Complete curated sets with seeds, organic soil pods, and compact planters.",
+            "badge": "Weatherproof",
+            "title": "Universal Railing Brackets",
+            "description": "Heavy-duty non-marking brackets fitting round, square, and flat metal railings from 1.5\" to 4.5\".",
             "link": "shopify://collections/all",
-            "link_text": "Discover Herb Kits"
+            "link_text": "View Hardware"
           }
         }
       },
       "block_order": [
-        "cat_planters",
-        "cat_tools",
-        "cat_watering",
-        "cat_vertical",
-        "cat_herbs"
+        "cat_railing_boxes",
+        "cat_hanging_wall",
+        "cat_self_watering",
+        "cat_multipacks",
+        "cat_hardware"
       ],
       "settings": {
         "subheading": "Crafted For Compact Spaces",
@@ -123,9 +123,9 @@
     "featured_collection": {
       "type": "featured-collection",
       "settings": {
-        "title": "Urban Gardening Essentials",
+        "title": "Urban Balcony Bestsellers",
         "heading_size": "h1",
-        "description": "<p>Top-rated space-saving planters, durable hand tools, and self-watering solutions designed for city growers.</p>",
+        "description": "<p>Top-rated railing planters, self-watering flower boxes, and compact wall hanging sets designed for city living.</p>",
         "show_description": true,
         "description_style": "body",
         "collection": "all",
@@ -164,7 +164,7 @@
           "settings": {
             "icon": "shield",
             "title": "Weather-Tough & Rust-Proof",
-            "description": "Powder-coated aluminum, UV-stable resin, and frost-proof ceramic engineered to endure high-rise winds."
+            "description": "High-grade polyethylene resin and powder-coated steel hardware built to withstand intense sun, frost, and high-rise wind."
           }
         },
         "benefit_water": {
@@ -172,7 +172,7 @@
           "settings": {
             "icon": "water",
             "title": "Smart Self-Watering Reservoirs",
-            "description": "Built-in subirrigation protects roots during busy workdays and prevents water from dripping onto downstairs neighbors."
+            "description": "Integrated subirrigation and overflow drainage prevent root rot while eliminating water dripping onto downstairs neighbors."
           }
         },
         "benefit_guarantee": {
@@ -180,7 +180,7 @@
           "settings": {
             "icon": "leaf",
             "title": "Urban Thriving Guarantee",
-            "description": "Crafted and field-tested for apartments. If you are not delighted with your balcony transformation, returns are hassle-free."
+            "description": "Guaranteed to fit railings 1.5\" to 4.5\" wide. If you are not delighted with your balcony transformation, returns are hassle-free."
           }
         }
       },
@@ -203,9 +203,9 @@
     "best_sellers": {
       "type": "featured-collection",
       "settings": {
-        "title": "Customer Favorites & Best Sellers",
+        "title": "Featured Railing & Wall Planters",
         "heading_size": "h2",
-        "description": "<p>Our most loved balcony essentials proven to thrive in apartments.</p>",
+        "description": "<p>Our most loved balcony essentials proven to thrive on city railings and patios.</p>",
         "show_description": true,
         "description_style": "body",
         "collection": "all",
@@ -249,14 +249,14 @@
         "text": {
           "type": "text",
           "settings": {
-            "text": "<p>Living in a city apartment shouldn't mean sacrificing fresh herbs, morning coffee surrounded by greenery, or the mindful joy of tending plants. Our space-saving vertical planters, rail-hung troughs, and lightweight ergonomic tools help you grow upward without cluttering the floor space you need to relax.</p>",
+            "text": "<p>Living in a city apartment shouldn't mean sacrificing fresh flowers, morning coffee surrounded by greenery, or homegrown herbs. Our rail-mounted flower boxes and hanging wall planters let you grow outward and upward, preserving the walkway space you need to sit, breathe, and unwind.</p>",
             "text_style": "body"
           }
         },
         "button": {
           "type": "button",
           "settings": {
-            "button_label": "Explore Our Essentials",
+            "button_label": "Shop Railing Collections",
             "button_link": "shopify://collections/all",
             "button_style_secondary": false
           }
@@ -289,30 +289,30 @@
           "type": "goal",
           "settings": {
             "badge": "Fresh Harvest",
-            "title": "Grow Fresh Kitchen Herbs",
-            "description": "Harvest organic basil, rosemary, and mint right outside your kitchen window, even with just 2 hours of direct sun.",
+            "title": "Fragrant Blooms & Herbs",
+            "description": "Fill 24\" and 40\" railing boxes with vibrant petunias, lavender, and kitchen herbs that catch optimal morning sun.",
             "link": "shopify://collections/all",
-            "button_label": "Shop Herb Kits"
+            "button_label": "Shop Railing Boxes"
           }
         },
         "goal_space": {
           "type": "goal",
           "settings": {
             "badge": "Space Maximizer",
-            "title": "Save Space & Grow Upward",
-            "description": "Utilize balcony walls, railing posts, and railings with vertical trellises, hanging troughs, and tiered stands.",
+            "title": "Vertical Wall & Window Greenery",
+            "description": "Mount 40\" rectangular planters along perimeter walls and window frames to double your planting area without losing deck space.",
             "link": "shopify://collections/all",
-            "button_label": "Explore Vertical Planters"
+            "button_label": "Explore Wall Planters"
           }
         },
         "goal_watering": {
           "type": "goal",
           "settings": {
             "badge": "Low Maintenance",
-            "title": "Simplify Daily Watering",
-            "description": "Self-watering planters with subirrigation reservoirs and long-reach drip cans keep your greenery hydrated effortlessly.",
+            "title": "No-Drip Self-Watering",
+            "description": "Built-in subirrigation reservoirs keep your plants hydrated during busy workdays with zero water dripping on lower floors.",
             "link": "shopify://collections/all",
-            "button_label": "See Smart Watering"
+            "button_label": "See Self-Watering"
           }
         }
       },
@@ -337,10 +337,10 @@
         "guide_beginner": {
           "type": "guide",
           "settings": {
-            "category": "Starter Guide",
+            "category": "Balcony Care",
             "read_time": "5 min read",
-            "title": "The 5-Step Beginner's Guide to High-Rise Balcony Gardening",
-            "excerpt": "How to calculate your balcony sun hours, pick wind-tolerant herbs, and prevent moisture damage to railings.",
+            "title": "How to Mount & Secure Railing Planters on Apartment Balconies",
+            "excerpt": "A step-by-step guide to adjusting universal brackets for round, square, or flat railings without scratching paint.",
             "link": "shopify://blogs/news"
           }
         },
@@ -350,7 +350,7 @@
             "category": "Plant Care",
             "read_time": "4 min read",
             "title": "How to Protect Balcony Plants from High-Rise Winds and Summer Heat",
-            "excerpt": "Simple sheltering techniques, self-watering strategies, and foliage staking that keep urban plants lush.",
+            "excerpt": "Simple sheltering techniques, self-watering strategies, and foliage choices that keep urban plants lush all season.",
             "link": "shopify://blogs/news"
           }
         },
@@ -359,8 +359,8 @@
           "settings": {
             "category": "Harvesting",
             "read_time": "6 min read",
-            "title": "7 Edible Herbs and Vegetables That Thrive in Shallow Planters",
-            "excerpt": "From sweet basil to tumbling cherry tomatoes: delicious, high-yield edible varieties tailored for compact containers.",
+            "title": "Top 7 Flowers & Herbs for 24\" and 40\" Railing Planters",
+            "excerpt": "From sweet basil to trailing petunias: delicious, high-yield edible and floral varieties tailored for compact planters.",
             "link": "shopify://blogs/news"
           }
         }
@@ -395,7 +395,7 @@
         "paragraph": {
           "type": "paragraph",
           "settings": {
-            "text": "<p>Get 10% off your first order, plus monthly small-space planting calendars tailored for balconies and apartments. No spam, ever.</p>"
+            "text": "<p>Get 10% off your first order, plus seasonal small-space planting calendars and balcony care tips. No spam, ever.</p>"
           }
         },
         "email_form": {

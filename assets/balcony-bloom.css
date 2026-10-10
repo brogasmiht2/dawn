@@ -797,3 +797,52 @@ h1, h2, h3, .h0, .h1, .h2, .h3,
   outline: 2px solid var(--bb-forest-green) !important;
   outline-offset: 3px !important;
 }
+
+/* --------------------------------------------------------------------------
+   Hero Banner & Visual Media Polish
+   -------------------------------------------------------------------------- */
+.banner__box {
+  background: rgba(36, 75, 58, 0.88) !important;
+  backdrop-filter: blur(8px);
+  border-radius: 12px;
+  border: 1px solid rgba(248, 246, 239, 0.2);
+  padding: 3.5rem 4rem !important;
+  box-shadow: 0 12px 36px rgba(0, 0, 0, 0.25);
+}
+
+@media screen and (max-width: 749px) {
+  .banner__box {
+    padding: 2.2rem 2rem !important;
+    margin: 1.5rem !important;
+  }
+  .banner__heading {
+    font-size: 3rem !important;
+  }
+}
+
+.banner__heading {
+  color: #FFFFFF !important;
+}
+
+.banner__text p {
+  color: var(--bb-warm-ivory) !important;
+  font-size: 1.6rem;
+  line-height: 1.5;
+}
+
+/* --------------------------------------------------------------------------
+   Header Logo & Navigation Polish
+   -------------------------------------------------------------------------- */
+.header__heading-logo {
+  transition: transform 0.25s ease;
+}
+
+.header__heading-link:hover .header__heading-logo {
+  transform: scale(1.02);
+}
+
+@media screen and (max-width: 749px) {
+  .header__heading-logo {
+    max-height: 36px !important;
+  }
+}

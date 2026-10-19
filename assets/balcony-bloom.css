@@ -18,7 +18,43 @@
   --bb-radius-card: 10px;
   --bb-radius-pill: 30px;
   --bb-radius-btn: 6px;
-  --bb-transition: all 0.25s cubic-bezier(0.2, 0.8, 0.2, 1);
+  --bb-transition: transform 0.25s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.25s cubic-bezier(0.2, 0.8, 0.2, 1), border-color 0.25s ease, background-color 0.25s ease, color 0.25s ease;
+}
+
+/* --------------------------------------------------------------------------
+   Themed Browser Surfaces & Typographic Polish
+   -------------------------------------------------------------------------- */
+::selection {
+  background-color: var(--bb-forest-green);
+  color: var(--bb-warm-ivory);
+}
+
+input, textarea, select {
+  caret-color: var(--bb-forest-green);
+}
+
+/* Custom Scrollbars */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bb-warm-ivory);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--bb-sage-green);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--bb-forest-green);
+}
+
+/* Tabular numerals for price comparison */
+.price, .price-item, .price__regular, .price__sale, .bb-sticky-atc__price {
+  font-variant-numeric: tabular-nums;
 }
 
 /* --------------------------------------------------------------------------
@@ -26,11 +62,13 @@
    -------------------------------------------------------------------------- */
 h1, h2, h3, .h0, .h1, .h2, .h3,
 .banner__heading,
-.rich-text__heading {
+.rich-text__heading,
+.title {
   font-family: var(--font-heading-family, "Playfair Display", "Cormorant Garamond", Garamond, Georgia, serif);
   letter-spacing: -0.015em;
   font-weight: 500;
   line-height: 1.25;
+  text-wrap: balance;
 }
 
 .banner__heading {
@@ -626,39 +664,8 @@ h1, h2, h3, .h0, .h1, .h2, .h3,
 }
 
 /* --------------------------------------------------------------------------
-   Cart Drawer: Free Shipping Bar & Botanical Badges
+   Cart Drawer: Botanical Trust Badges
    -------------------------------------------------------------------------- */
-.bb-free-shipping-bar {
-  background-color: var(--bb-soft-sage);
-  border: 1px solid var(--bb-border-subtle);
-  border-radius: 8px;
-  padding: 1.2rem 1.6rem;
-  margin: 1rem 0 1.5rem;
-}
-
-.bb-free-shipping-bar__text {
-  font-size: 1.3rem;
-  font-weight: 600;
-  color: var(--bb-charcoal);
-  margin: 0 0 0.8rem;
-  text-align: center;
-}
-
-.bb-free-shipping-bar__track {
-  width: 100%;
-  height: 7px;
-  background-color: rgba(36, 75, 58, 0.15);
-  border-radius: 4px;
-  overflow: hidden;
-}
-
-.bb-free-shipping-bar__progress {
-  height: 100%;
-  background: linear-gradient(90deg, var(--bb-sage-green), var(--bb-forest-green));
-  border-radius: 4px;
-  transition: width 0.4s ease;
-}
-
 .bb-cart-trust-badges {
   display: flex;
   flex-direction: column;

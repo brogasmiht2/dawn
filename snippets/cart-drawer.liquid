@@ -1,9 +1,8 @@
-{% comment %}
-  Renders cart drawer
-
+{% doc %}
+  Renders the interactive slide-out cart drawer.
   Usage:
   {% render 'cart-drawer' %}
-{% endcomment %}
+{% enddoc %}
 
 {{ 'quantity-popover.css' | asset_url | stylesheet_tag }}
 {{ 'component-card.css' | asset_url | stylesheet_tag }}
@@ -74,27 +73,6 @@
           </span>
         </button>
       </div>
-
-      {%- assign free_shipping_threshold = 5000 -%}
-      {%- if cart != empty -%}
-        <div class="bb-free-shipping-bar" style="margin: 1.2rem 1.5rem 0.5rem;">
-          {%- if cart.total_price >= free_shipping_threshold -%}
-            <p class="bb-free-shipping-bar__text">🎉 You've unlocked <strong>Free Urban Delivery!</strong></p>
-            <div class="bb-free-shipping-bar__track">
-              <div class="bb-free-shipping-bar__progress" style="width: 100%;"></div>
-            </div>
-          {%- else -%}
-            {%- assign amount_remaining = free_shipping_threshold | minus: cart.total_price -%}
-            {%- assign percent_progress = cart.total_price | times: 100.0 | divided_by: free_shipping_threshold -%}
-            <p class="bb-free-shipping-bar__text">
-              🌱 Add <strong>{{ amount_remaining | money }}</strong> more for <strong>Free Shipping!</strong>
-            </p>
-            <div class="bb-free-shipping-bar__track">
-              <div class="bb-free-shipping-bar__progress" style="width: {{ percent_progress }}%;"></div>
-            </div>
-          {%- endif -%}
-        </div>
-      {%- endif -%}
 
       <cart-drawer-items
         view-event-payload="{{ cart | standard_event_data: 'view', context: 'dialog' | escape }}"

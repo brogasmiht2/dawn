@@ -1,8 +1,10 @@
-{% comment %}
-  Renders mobile-friendly sticky Add to Cart bar on product pages
-  Usage:
+{% doc %}
+  Renders mobile-friendly sticky Add to Cart bar on product pages.
+
+  @param {product} product - The product object to render sticky bar for
+  @example
   {% render 'sticky-add-to-cart', product: product %}
-{% endcomment %}
+{% enddoc %}
 
 {%- if product != blank and product.available -%}
   <div id="bb-sticky-atc" class="bb-sticky-atc" aria-hidden="true">
@@ -14,6 +16,8 @@
             | image_url: width: 120
             | image_tag:
               loading: 'lazy',
+              width: 44,
+              height: 44,
               class: 'bb-sticky-atc__thumbnail',
               alt: product.title | escape
           }}

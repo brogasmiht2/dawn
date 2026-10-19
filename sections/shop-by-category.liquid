@@ -54,35 +54,35 @@
               <div class="bb-category-card__icon-placeholder">
                 {%- case forloop.index -%}
                   {%- when 1 -%}
-                    <img src="{{ 'category-railing-planters.jpg' | asset_url }}" alt="Railing Planters" loading="lazy" style="width: 100%; height: 100%; object-fit: cover;">
+                    <img src="{{ 'category-railing-planters.jpg' | asset_url }}" alt="Balcony Planters" loading="lazy" width="300" height="300" style="width: 100%; height: 100%; object-fit: cover;">
                   {%- when 2 -%}
+                    {% comment %} Self-Watering Subirrigation Reservoir Icon {% endcomment %}
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                      <path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"></path>
+                      <path d="M6 14c1.5 1 3.5 1 5 0s3.5-1 5 0"></path>
+                    </svg>
+                  {%- when 3 -%}
                     {% comment %} Precision Tools Icon {% endcomment %}
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                       <path d="M14 4l6 6-4 4-6-6 4-4z"></path>
                       <path d="M4 20l6-6"></path>
                       <path d="M3 21l2-2"></path>
                     </svg>
-                  {%- when 3 -%}
-                    {% comment %} Watering Can / Droplet Icon {% endcomment %}
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-                      <path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"></path>
-                    </svg>
                   {%- when 4 -%}
-                    {% comment %} Vertical Trellis Icon {% endcomment %}
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                    {% comment %} Watering Accessories Icon {% endcomment %}
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                      <path d="M3 11l13-7v14L3 11z"></path>
+                      <path d="M19 9h2a2 2 0 0 1 2 2v2a2 2 0 0 1-2 2h-2"></path>
+                      <path d="M7 11V6a2 2 0 0 1 2-2h2"></path>
+                    </svg>
+                  {%- else -%}
+                    {% comment %} Vertical Gardening Trellis Icon {% endcomment %}
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                       <rect x="3" y="3" width="18" height="18" rx="2"></rect>
                       <path d="M3 9h18"></path>
                       <path d="M3 15h18"></path>
                       <path d="M9 3v18"></path>
                       <path d="M15 3v18"></path>
-                    </svg>
-                  {%- else -%}
-                    {% comment %} Herb Sprout Icon {% endcomment %}
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-                      <path d="M7 20h10"></path>
-                      <path d="M12 20v-8"></path>
-                      <path d="M12 12a5 5 0 0 1-5-5 5 5 0 0 1 5 5z"></path>
-                      <path d="M12 12a5 5 0 0 0 5-5 5 5 0 0 0-5 5z"></path>
                     </svg>
                 {%- endcase -%}
               </div>
@@ -101,7 +101,7 @@
 
           <span class="bb-category-card__link-text">
             {{ block.settings.link_text | default: 'Shop Category' }}
-            <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.8">
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
               <path d="M3 7h8M8 4l3 3-3 3" stroke-linecap="round" stroke-linejoin="round"/>
             </svg>
           </span>

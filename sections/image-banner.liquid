@@ -126,6 +126,13 @@
     <div class="banner__box content-container content-container--full-width-mobile color-{{ section.settings.color_scheme }} gradient">
       {%- for block in section.blocks -%}
         {%- case block.type -%}
+          {%- when 'caption' -%}
+            <p
+              class="banner__caption caption-with-letter-spacing caption-with-letter-spacing--{{ block.settings.caption_size }} bb-eyebrow"
+              {{ block.shopify_attributes }}
+            >
+              {{ block.settings.caption | escape }}
+            </p>
           {%- when 'heading' -%}
             <h2
               class="banner__heading inline-richtext {{ block.settings.heading_size }}"
@@ -368,6 +375,39 @@
     }
   ],
   "blocks": [
+    {
+      "type": "caption",
+      "name": "t:sections.image-with-text.blocks.caption.name",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "text",
+          "id": "caption",
+          "default": "Small-Space Gardening",
+          "label": "t:sections.image-with-text.blocks.caption.settings.text.label"
+        },
+        {
+          "type": "select",
+          "id": "caption_size",
+          "options": [
+            {
+              "value": "small",
+              "label": "t:sections.image-with-text.blocks.caption.settings.caption_size.options__1.label"
+            },
+            {
+              "value": "medium",
+              "label": "t:sections.image-with-text.blocks.caption.settings.caption_size.options__2.label"
+            },
+            {
+              "value": "large",
+              "label": "t:sections.image-with-text.blocks.caption.settings.caption_size.options__3.label"
+            }
+          ],
+          "default": "medium",
+          "label": "t:sections.image-with-text.blocks.caption.settings.caption_size.label"
+        }
+      ]
+    },
     {
       "type": "heading",
       "name": "t:sections.image-banner.blocks.heading.name",

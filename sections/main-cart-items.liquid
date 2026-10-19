@@ -49,7 +49,26 @@
           {{ 'sections.cart.login.paragraph_html' | t: link: routes.account_login_url }}
         </p>
       {%- endif -%}
-    </div>
+    {%- assign free_shipping_threshold = 5000 -%}
+    {%- if cart != empty -%}
+      <div class="bb-free-shipping-bar" style="margin: 0 0 2rem; max-width: 600px;">
+        {%- if cart.total_price >= free_shipping_threshold -%}
+          <p class="bb-free-shipping-bar__text">🎉 You've unlocked <strong>Free Urban Delivery!</strong></p>
+          <div class="bb-free-shipping-bar__track">
+            <div class="bb-free-shipping-bar__progress" style="width: 100%;"></div>
+          </div>
+        {%- else -%}
+          {%- assign amount_remaining = free_shipping_threshold | minus: cart.total_price -%}
+          {%- assign percent_progress = cart.total_price | times: 100.0 | divided_by: free_shipping_threshold -%}
+          <p class="bb-free-shipping-bar__text">
+            🌱 Add <strong>{{ amount_remaining | money }}</strong> more for <strong>Free Shipping!</strong>
+          </p>
+          <div class="bb-free-shipping-bar__track">
+            <div class="bb-free-shipping-bar__progress" style="width: {{ percent_progress }}%;"></div>
+          </div>
+        {%- endif -%}
+      </div>
+    {%- endif -%}
 
     <form action="{{ routes.cart_url }}" class="cart__contents critical-hidden" method="post" id="cart">
       <div class="cart__items" id="main-cart-items" data-id="{{ section.id }}">

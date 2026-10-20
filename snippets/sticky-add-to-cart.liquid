@@ -26,11 +26,12 @@
           <p class="bb-sticky-atc__title">{{ product.title | escape }}</p>
           <div class="bb-sticky-atc__price">
             <span id="bb-sticky-price">{{ product.selected_or_first_available_variant.price | money }}</span>
-            {%- if product.selected_or_first_available_variant.compare_at_price > product.selected_or_first_available_variant.price -%}
-              <s id="bb-sticky-compare-price" style="color: rgba(36,41,36,0.6); font-size: 1.15rem; margin-left: 0.4rem;">
-                {{ product.selected_or_first_available_variant.compare_at_price | money }}
-              </s>
-            {%- endif -%}
+            <s
+              id="bb-sticky-compare-price"
+              style="color: rgba(36,41,36,0.6); font-size: 1.15rem; margin-left: 0.4rem; display: {%- if product.selected_or_first_available_variant.compare_at_price > product.selected_or_first_available_variant.price -%}inline{%- else -%}none{%- endif -%};"
+            >
+              {{- product.selected_or_first_available_variant.compare_at_price | money -}}
+            </s>
           </div>
         </div>
       </div>
@@ -54,24 +55,78 @@
       if (!stickyBar) return;
 
       const triggerElement = document.querySelector('.product-form__buttons, .product-form');
-      if (!triggerElement) return;
+      if (triggerElement) {
+        const observer = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (!entry.isIntersecting && entry.boundingClientRect.top < 0) {
+                stickyBar.classList.add('is-visible');
+                stickyBar.setAttribute('aria-hidden', 'false');
+              } else {
+                stickyBar.classList.remove('is-visible');
+                stickyBar.setAttribute('aria-hidden', 'true');
+              }
+            });
+          },
+          { threshold: 0 }
+        );
 
-      const observer = new IntersectionObserver(
-        (entries) => {
-          entries.forEach((entry) => {
-            if (!entry.isIntersecting && entry.boundingClientRect.top < 0) {
-              stickyBar.classList.add('is-visible');
-              stickyBar.setAttribute('aria-hidden', 'false');
-            } else {
-              stickyBar.classList.remove('is-visible');
-              stickyBar.setAttribute('aria-hidden', 'true');
+        observer.observe(triggerElement);
+      }
+
+      // Synchronize with Dawn 16.0 variant changes
+      if (typeof subscribe === 'function' && typeof PUB_SUB_EVENTS !== 'undefined') {
+        subscribe(PUB_SUB_EVENTS.variantChange, (event) => {
+          const variant = event?.data?.variant;
+          const stickyPrice = document.getElementById('bb-sticky-price');
+          const stickyCompare = document.getElementById('bb-sticky-compare-price');
+          const stickyBtn = document.getElementById('bb-sticky-atc-submit');
+          const stickyThumb = stickyBar.querySelector('.bb-sticky-atc__thumbnail');
+
+          // Synchronize price and compare-at price from live product container or event fragment
+          const container = event?.data?.html || document;
+          const isSale = container.querySelector('.product__info-container .price--on-sale, .price--on-sale');
+          const salePriceEl = container.querySelector('.product__info-container .price__sale .price-item--sale, .price__sale .price-item--sale, .price-item--sale');
+          const regularPriceEl = container.querySelector('.product__info-container .price__regular .price-item--regular, .price__regular .price-item--regular, .price-item--regular');
+          const comparePriceEl = container.querySelector('.product__info-container .price__sale .price-item--regular, .price__sale .price-item--regular');
+
+          if (stickyPrice) {
+            if (isSale && salePriceEl) {
+              stickyPrice.textContent = salePriceEl.textContent.trim();
+            } else if (regularPriceEl) {
+              stickyPrice.textContent = regularPriceEl.textContent.trim();
             }
-          });
-        },
-        { threshold: 0 }
-      );
+          }
 
-      observer.observe(triggerElement);
+          if (stickyCompare) {
+            if (isSale && comparePriceEl) {
+              stickyCompare.textContent = comparePriceEl.textContent.trim();
+              stickyCompare.style.display = 'inline';
+            } else {
+              stickyCompare.style.display = 'none';
+            }
+          }
+
+          // Synchronize thumbnail image with variant featured image
+          if (variant?.featured_image?.src && stickyThumb) {
+            stickyThumb.src = variant.featured_image.src;
+          }
+
+          // Synchronize button text and availability
+          if (stickyBtn) {
+            if (!variant) {
+              stickyBtn.disabled = true;
+              stickyBtn.textContent = window.variantStrings?.unavailable || 'Unavailable';
+            } else if (!variant.available) {
+              stickyBtn.disabled = true;
+              stickyBtn.textContent = window.variantStrings?.soldOut || 'Sold out';
+            } else {
+              stickyBtn.disabled = false;
+              stickyBtn.textContent = window.variantStrings?.addToCart || 'Add to cart';
+            }
+          }
+        });
+      }
     });
   </script>
 {%- endif -%}

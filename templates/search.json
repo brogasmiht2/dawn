@@ -1,8 +1,9 @@
 {
   "sections": {
-    "main": {
+    "main-search": {
       "type": "main-search",
       "settings": {
+        "color_scheme": "scheme-1",
         "columns_desktop": 4,
         "image_ratio": "square",
         "image_shape": "default",
@@ -21,6 +22,6 @@
     }
   },
   "order": [
-    "main"
+    "main-search"
   ]
 }

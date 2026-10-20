@@ -8,6 +8,7 @@
   --bb-sage-green: #91A88F;
   --bb-warm-ivory: #F8F6EF;
   --bb-terracotta: #CE7958;
+  --bb-terracotta-text: #B35634;
   --bb-charcoal: #242924;
   --bb-white: #FFFFFF;
   --bb-soft-sage: #EEF3ED;
@@ -15,9 +16,10 @@
   --bb-border-medium: rgba(36, 75, 58, 0.22);
   --bb-shadow-soft: 0 4px 20px rgba(36, 41, 36, 0.06);
   --bb-shadow-hover: 0 8px 28px rgba(36, 41, 36, 0.12);
-  --bb-radius-card: 10px;
-  --bb-radius-pill: 30px;
-  --bb-radius-btn: 6px;
+  --bb-radius-card: 4px;
+  --bb-radius-pill: 4px;
+  --bb-radius-badge: 4px;
+  --bb-radius-btn: 4px;
   --bb-transition: transform 0.25s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.25s cubic-bezier(0.2, 0.8, 0.2, 1), border-color 0.25s ease, background-color 0.25s ease, color 0.25s ease;
 }
 
@@ -60,10 +62,22 @@ input, textarea, select {
 /* --------------------------------------------------------------------------
    Global Typography & Editorial Aesthetics
    -------------------------------------------------------------------------- */
-h1, h2, h3, .h0, .h1, .h2, .h3,
+h1, h2, h3, h4, h5, h6,
+.h0, .h1, .h2, .h3, .h4, .h5, .h6,
 .banner__heading,
 .rich-text__heading,
-.title {
+.title,
+.product__title,
+.collection-hero__title,
+.template-search__header h1,
+.drawer__heading,
+.shopify-policy__title h1,
+.card__heading,
+.bb-category-card__title,
+.bb-benefit-title,
+.bb-goal-card__title,
+.bb-guide-card__title,
+.bb-faq-summary {
   font-family: var(--font-heading-family, "Playfair Display", "Cormorant Garamond", Garamond, Georgia, serif);
   letter-spacing: -0.015em;
   font-weight: 500;
@@ -82,8 +96,12 @@ h1, h2, h3, .h0, .h1, .h2, .h3,
   letter-spacing: 0.12em;
   text-transform: uppercase;
   font-weight: 600;
-  color: var(--bb-terracotta);
+  color: var(--bb-terracotta-text, #B35634);
   margin-bottom: 0.8rem;
+}
+
+.bb-eyebrow {
+  color: #B35634;
 }
 
 /* --------------------------------------------------------------------------
@@ -97,7 +115,7 @@ h1, h2, h3, .h0, .h1, .h2, .h3,
   font-weight: 600;
   letter-spacing: 0.04em;
   padding: 0.35rem 0.85rem;
-  border-radius: var(--bb-radius-pill);
+  border-radius: var(--bb-radius-badge);
   line-height: 1.2;
 }
 
@@ -124,12 +142,18 @@ h1, h2, h3, .h0, .h1, .h2, .h3,
 
 /* Native Dawn Badge Refinements */
 .badge {
-  border-radius: var(--bb-radius-pill);
+  border-radius: var(--bb-radius-badge);
   font-size: 1.15rem;
   font-weight: 600;
   letter-spacing: 0.04em;
   padding: 0.4rem 1rem;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
+}
+
+.badge--sale,
+.price__badge-sale {
+  background-color: #B35634 !important;
+  color: #FFFFFF !important;
 }
 
 /* --------------------------------------------------------------------------
@@ -242,6 +266,13 @@ h1, h2, h3, .h0, .h1, .h2, .h3,
   margin-top: 3rem;
 }
 
+@media screen and (max-width: 749px) {
+  .bb-category-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 1.2rem;
+  }
+}
+
 @media screen and (min-width: 990px) {
   .bb-category-grid--5-col {
     grid-template-columns: repeat(5, 1fr);
@@ -274,7 +305,7 @@ h1, h2, h3, .h0, .h1, .h2, .h3,
 .bb-category-card__image-box {
   width: 100%;
   aspect-ratio: 1 / 1;
-  border-radius: 6px;
+  border-radius: 4px;
   background-color: var(--bb-soft-sage);
   display: flex;
   align-items: center;
@@ -306,7 +337,7 @@ h1, h2, h3, .h0, .h1, .h2, .h3,
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.08em;
-  color: var(--bb-terracotta);
+  color: var(--bb-terracotta-text, #B35634);
   margin-bottom: 0.4rem;
 }
 
@@ -388,7 +419,7 @@ h1, h2, h3, .h0, .h1, .h2, .h3,
 .bb-benefit-icon-wrapper {
   width: 52px;
   height: 52px;
-  border-radius: 12px;
+  border-radius: 4px;
   background-color: var(--bb-soft-sage);
   color: var(--bb-forest-green);
   display: flex;
@@ -465,7 +496,7 @@ h1, h2, h3, .h0, .h1, .h2, .h3,
   color: var(--bb-forest-green);
   background-color: rgba(36, 75, 58, 0.1);
   padding: 0.3rem 0.8rem;
-  border-radius: var(--bb-radius-pill);
+  border-radius: var(--bb-radius-badge);
   margin-bottom: 1.2rem;
 }
 
@@ -563,7 +594,7 @@ h1, h2, h3, .h0, .h1, .h2, .h3,
   gap: 1rem;
   margin-bottom: 0.8rem;
   font-size: 1.2rem;
-  color: var(--bb-terracotta);
+  color: var(--bb-terracotta-text, #B35634);
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.05em;
@@ -671,8 +702,8 @@ h1, h2, h3, .h0, .h1, .h2, .h3,
   flex-direction: column;
   gap: 0.6rem;
   padding: 1.2rem;
-  background-color: var(--bb-warm-ivory);
-  border-radius: 8px;
+  background-color: var(--bb-soft-sage);
+  border-radius: 4px;
   border: 1px solid var(--bb-border-subtle);
   margin-top: 1.5rem;
   font-size: 1.25rem;
@@ -736,7 +767,7 @@ h1, h2, h3, .h0, .h1, .h2, .h3,
 .bb-sticky-atc__thumbnail {
   width: 44px;
   height: 44px;
-  border-radius: 6px;
+  border-radius: 4px;
   object-fit: cover;
   border: 1px solid var(--bb-border-subtle);
   flex-shrink: 0;
@@ -776,6 +807,10 @@ h1, h2, h3, .h0, .h1, .h2, .h3,
   color: #FFFFFF;
   border: none;
   border-radius: var(--bb-radius-btn);
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   padding: 0.9rem 1.8rem;
   font-size: 1.35rem;
   font-weight: 600;
@@ -801,8 +836,17 @@ h1, h2, h3, .h0, .h1, .h2, .h3,
 }
 
 :focus-visible {
-  outline: 2px solid var(--bb-forest-green) !important;
+  outline: 2px solid var(--bb-terracotta) !important;
   outline-offset: 3px !important;
+  box-shadow: 0 0 0 4px rgba(255, 255, 255, 0.85) !important;
+}
+
+.banner__box :focus-visible,
+.color-scheme-3 :focus-visible,
+.color-scheme-4 :focus-visible,
+.bb-sticky-atc__button:focus-visible {
+  outline-color: var(--bb-terracotta) !important;
+  box-shadow: 0 0 0 4px rgba(248, 246, 239, 0.9) !important;
 }
 
 /* --------------------------------------------------------------------------
@@ -811,7 +855,7 @@ h1, h2, h3, .h0, .h1, .h2, .h3,
 .banner__box {
   background: rgba(36, 75, 58, 0.88) !important;
   backdrop-filter: blur(8px);
-  border-radius: 12px;
+  border-radius: 4px;
   border: 1px solid rgba(248, 246, 239, 0.2);
   padding: 3.5rem 4rem !important;
   box-shadow: 0 12px 36px rgba(0, 0, 0, 0.25);
@@ -853,3 +897,50 @@ h1, h2, h3, .h0, .h1, .h2, .h3,
     max-height: 36px !important;
   }
 }
+
+/* --------------------------------------------------------------------------
+   Shopify Policy Pages Editorial Layout
+   -------------------------------------------------------------------------- */
+.shopify-policy__container {
+  max-width: 84rem;
+  margin: 0 auto;
+  padding: 4rem 2rem 6rem;
+  line-height: 1.7;
+  color: var(--bb-charcoal);
+}
+
+.shopify-policy__title {
+  text-align: center;
+  margin-bottom: 3.5rem;
+}
+
+.shopify-policy__title h1 {
+  font-family: var(--font-heading-family, "Playfair Display", "Cormorant Garamond", Garamond, Georgia, serif);
+  font-size: 3.2rem;
+  font-weight: 500;
+  color: var(--bb-forest-green);
+  letter-spacing: -0.02em;
+  text-wrap: balance;
+}
+
+.shopify-policy__body {
+  max-width: 72ch;
+  margin: 0 auto;
+  font-size: 1.5rem;
+}
+
+.shopify-policy__body p,
+.shopify-policy__body ul,
+.shopify-policy__body ol {
+  max-width: 72ch;
+  margin-bottom: 1.6rem;
+}
+
+.shopify-policy__body h2,
+.shopify-policy__body h3 {
+  font-family: var(--font-heading-family, serif);
+  color: var(--bb-forest-green);
+  margin-top: 2.8rem;
+  margin-bottom: 1.2rem;
+}
+

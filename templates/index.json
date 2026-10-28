@@ -114,10 +114,11 @@
         "cat_vertical_gardening": {
           "type": "category",
           "settings": {
+            "image": "shopify://shop_images/balcony-planters-cover.png",
             "badge": "Space Maximizer",
             "title": "Vertical Gardening",
             "description": "Wall-mount and window planter boxes that double your green space without taking floor area.",
-            "link": "shopify://collections/all",
+            "link": "shopify://collections/vertical-gardening",
             "link_text": "Shop Vertical"
           }
         }

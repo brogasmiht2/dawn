@@ -103,10 +103,11 @@
         "cat_watering": {
           "type": "category",
           "settings": {
+            "image": "shopify://shop_images/vertical-gardening-cover.png",
             "badge": "Precision Pour",
             "title": "Watering Accessories",
             "description": "Long-spout cans, misting bottles, and drip trays tailored for indoor and patio plant care.",
-            "link": "shopify://collections/all",
+            "link": "shopify://collections/watering-accessories",
             "link_text": "Explore Watering"
           }
         },

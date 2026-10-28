@@ -81,6 +81,7 @@
         "cat_self_watering": {
           "type": "category",
           "settings": {
+            "image": "shopify://shop_images/self-watering-planters-cover.png",
             "badge": "Smart Subirrigation",
             "title": "Self-Watering Planters",
             "description": "Built-in moisture reservoirs and overflow drains that protect roots and prevent balcony drips.",
@@ -91,10 +92,11 @@
         "cat_gardening_tools": {
           "type": "category",
           "settings": {
+            "image": "shopify://shop_images/watering-generated.png",
             "badge": "Ergonomic & Compact",
             "title": "Gardening Tools",
             "description": "Precision trowels, pruners, and small-space hand tools made for urban container care.",
-            "link": "shopify://collections/all",
+            "link": "shopify://collections/gardening-tools",
             "link_text": "Shop Tools"
           }
         },

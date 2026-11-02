@@ -130,7 +130,8 @@ function Get-ProjectFileContent([string]$relativePath) {
 
 function Get-ProjectJson([string]$relativePath) {
     $content = Get-ProjectFileContent $relativePath
-    return ConvertFrom-Json $content
+    $cleanContent = $content -replace '(?s)/\*.*?\*/', '' -replace '(?m)^\s*//.*$', ''
+    return ConvertFrom-Json $cleanContent
 }
 
 # --- Test Runner Functions ---

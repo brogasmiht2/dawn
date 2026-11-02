@@ -506,3 +506,497 @@
     }
   }
 }
+
+
+/* ==========================================================================
+   BalconyBloomCo — Flagship E-Commerce Footer Architecture
+   ========================================================================== */
+
+/* 1. Pre-Footer Trust Bar */
+.footer__trust-bar {
+  padding: 3.2rem 0;
+  border-bottom: 0.1rem solid rgba(var(--color-foreground), 0.12);
+  margin-bottom: 4.8rem;
+}
+
+.footer__trust-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2.4rem;
+  align-items: stretch;
+}
+
+.footer__trust-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.4rem;
+  padding: 0.8rem 1rem;
+  border-radius: var(--bb-radius-card, 4px);
+  background: rgba(var(--color-foreground), 0.02);
+  transition: background var(--duration-default) ease;
+}
+
+.footer__trust-item:hover {
+  background: rgba(var(--color-foreground), 0.05);
+}
+
+.footer__trust-icon-box {
+  flex-shrink: 0;
+  width: 4.4rem;
+  height: 4.4rem;
+  border-radius: var(--bb-radius-card, 4px);
+  background: rgba(var(--color-foreground), 0.08);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #CE7958;
+  transition: transform var(--duration-short) ease, background var(--duration-short) ease;
+}
+
+.footer__trust-item:hover .footer__trust-icon-box {
+  transform: translateY(-2px);
+  background: rgba(206, 121, 88, 0.15);
+}
+
+.footer__trust-text-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.footer__trust-heading {
+  font-family: var(--font-body-family);
+  font-size: 1.45rem;
+  font-weight: 600;
+  line-height: 1.3;
+  margin: 0 0 0.4rem;
+  color: rgb(var(--color-foreground));
+  text-wrap: balance;
+}
+
+.footer__trust-subtext {
+  font-size: 1.25rem;
+  line-height: 1.45;
+  margin: 0;
+  color: rgba(var(--color-foreground), 0.82);
+}
+
+@media screen and (max-width: 989px) {
+  .footer__trust-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+  }
+}
+
+@media screen and (max-width: 550px) {
+  .footer__trust-grid {
+    grid-template-columns: 1fr;
+    gap: 1.6rem;
+  }
+}
+
+/* 2. Main 4-Column Footer Grid */
+@media screen and (min-width: 990px) {
+  .footer__blocks-wrapper.grid {
+    display: grid;
+    grid-template-columns: 1.35fr 1fr 1.05fr 1.35fr;
+    column-gap: 4rem;
+    row-gap: 4rem;
+    align-items: start;
+    margin: 0;
+  }
+
+  .footer__blocks-wrapper .footer-block.grid__item {
+    width: 100%;
+    max-width: 100%;
+    padding: 0;
+    margin: 0;
+  }
+}
+
+@media screen and (min-width: 750px) and (max-width: 989px) {
+  .footer__blocks-wrapper.grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 3.5rem;
+    row-gap: 4rem;
+    margin: 0;
+  }
+
+  .footer__blocks-wrapper .footer-block.grid__item {
+    width: 100%;
+    max-width: 100%;
+    padding: 0;
+    margin: 0;
+  }
+}
+
+@media screen and (max-width: 749px) {
+  .footer__blocks-wrapper.grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    row-gap: 3.2rem;
+    margin: 0;
+  }
+
+  .footer__blocks-wrapper .footer-block.grid__item {
+    width: 100%;
+    max-width: 100%;
+    padding: 0;
+    margin: 0;
+  }
+}
+
+/* 3. Brand & Mission Column */
+.footer-block__logo-wrapper {
+  margin-bottom: 1.4rem;
+}
+
+.footer__logo-link {
+  display: inline-block;
+  text-decoration: none;
+}
+
+.footer__logo-image {
+  max-width: 210px;
+  height: auto;
+  display: block;
+}
+
+.footer-block__tagline {
+  font-family: var(--font-heading-family);
+  font-size: 1.5rem;
+  font-style: italic;
+  color: #91A88F;
+  margin: 0.6rem 0 1.2rem;
+  letter-spacing: -0.01em;
+}
+
+.footer-block__brand-desc {
+  font-size: 1.4rem;
+  line-height: 1.6;
+  color: rgba(var(--color-foreground), 0.88);
+  margin-bottom: 1.8rem;
+}
+
+.footer-block__brand-desc p {
+  margin: 0;
+}
+
+.footer-block__contact-card {
+  background: rgba(var(--color-foreground), 0.05);
+  border: 0.1rem solid rgba(var(--color-foreground), 0.12);
+  border-radius: var(--bb-radius-card, 4px);
+  padding: 1.2rem 1.4rem;
+  margin-bottom: 1.8rem;
+  max-width: 34rem;
+}
+
+.footer-block__contact-line {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  margin-bottom: 0.5rem;
+  color: rgb(var(--color-foreground));
+}
+
+.footer-block__contact-email {
+  font-size: 1.35rem;
+  font-weight: 600;
+  color: rgb(var(--color-foreground));
+  text-decoration: none;
+  transition: color var(--duration-short) ease;
+}
+
+.footer-block__contact-email:hover {
+  color: #CE7958;
+  text-decoration: underline;
+}
+
+.footer-block__contact-hours {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-size: 1.2rem;
+  color: rgba(var(--color-foreground), 0.75);
+}
+
+.footer-block__status-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background-color: #91A88F;
+  display: inline-block;
+  box-shadow: 0 0 0 2px rgba(145, 168, 143, 0.3);
+  animation: pulse-dot 2.5s infinite;
+}
+
+@keyframes pulse-dot {
+  0%, 100% {
+    box-shadow: 0 0 0 2px rgba(145, 168, 143, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 0 5px rgba(145, 168, 143, 0.1);
+  }
+}
+
+.footer-block__social-wrapper {
+  margin-top: 1.2rem;
+}
+
+.footer-block__social-wrapper .footer__list-social {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  flex-wrap: wrap;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-block__social-wrapper .list-social__link {
+  width: 3.8rem;
+  height: 3.8rem;
+  border-radius: 50%;
+  background: rgba(var(--color-foreground), 0.08);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgb(var(--color-foreground));
+  transition: transform var(--duration-short) ease, background var(--duration-short) ease, color var(--duration-short) ease;
+  padding: 0;
+}
+
+.footer-block__social-wrapper .list-social__link:hover {
+  background: #CE7958;
+  color: #FFFFFF;
+  transform: translateY(-2px);
+}
+
+/* 4. Navigation Menus */
+.footer-block__heading {
+  font-family: var(--font-heading-family);
+  font-size: 1.85rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  color: rgb(var(--color-foreground));
+  margin: 0 0 1.8rem;
+  position: relative;
+  text-wrap: balance;
+}
+
+.footer-block__details-content .list-menu__item--link {
+  font-size: 1.45rem;
+  line-height: 1.5;
+  color: rgba(var(--color-foreground), 0.85);
+  padding: 0.6rem 0;
+  display: inline-flex;
+  align-items: center;
+  text-decoration: none;
+  transition: color var(--duration-short) ease, transform var(--duration-short) ease;
+}
+
+.footer-block__details-content .list-menu__item--link:hover {
+  color: #CE7958;
+  transform: translateX(4px);
+  text-decoration: none;
+}
+
+/* 5. Newsletter Column */
+.footer-block--newsletter-col {
+  display: flex;
+  flex-direction: column;
+}
+
+.footer-block__newsletter-badge {
+  display: inline-block;
+  align-self: flex-start;
+  font-size: 1.1rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #CE7958;
+  background: rgba(206, 121, 88, 0.14);
+  padding: 0.35rem 0.85rem;
+  border-radius: var(--bb-radius-card, 4px);
+  margin-bottom: 1.2rem;
+}
+
+.footer-block__newsletter-subtext {
+  font-size: 1.35rem;
+  line-height: 1.55;
+  color: rgba(var(--color-foreground), 0.85);
+  margin-bottom: 1.6rem;
+}
+
+.footer-block__newsletter-subtext p {
+  margin: 0;
+}
+
+.footer-block--newsletter-col .footer__newsletter {
+  margin: 0;
+}
+
+.footer-block--newsletter-col .newsletter-form__field-wrapper {
+  max-width: 100%;
+}
+
+.footer-block--newsletter-col .field {
+  border-radius: var(--bb-radius-card, 4px);
+  background: rgba(var(--color-foreground), 0.06);
+  border: 0.1rem solid rgba(var(--color-foreground), 0.22);
+  transition: border-color var(--duration-short) ease, box-shadow var(--duration-short) ease;
+  overflow: hidden;
+}
+
+.footer-block--newsletter-col .field:focus-within {
+  border-color: #CE7958;
+  box-shadow: 0 0 0 2px rgba(206, 121, 88, 0.25);
+}
+
+.footer-block--newsletter-col .field__input {
+  color: rgb(var(--color-foreground));
+  padding-right: 5rem;
+}
+
+.footer-block--newsletter-col .field__button {
+  background: #CE7958;
+  color: #FFFFFF;
+  width: 4.8rem;
+  min-height: 44px;
+  transition: background var(--duration-short) ease;
+}
+
+.footer-block--newsletter-col .field__button:hover {
+  background: #B35634;
+}
+
+.footer-block__newsletter-privacy {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-size: 1.15rem;
+  color: rgba(var(--color-foreground), 0.72);
+  margin-top: 1rem;
+}
+
+/* 6. Unified Bottom Legal & Payment Bar */
+.footer__content-bottom {
+  border-top: 0.1rem solid rgba(var(--color-foreground), 0.12);
+  padding-top: 2.8rem;
+  margin-top: 4.8rem;
+}
+
+.footer__content-bottom-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 2rem;
+  width: 100%;
+}
+
+.footer__bottom-left {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1.6rem;
+}
+
+.footer__copyright {
+  margin: 0;
+  font-size: 1.25rem;
+  color: rgba(var(--color-foreground), 0.78);
+}
+
+.policies {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1.2rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.policies li {
+  display: inline-flex;
+  align-items: center;
+}
+
+.policies li a {
+  font-size: 1.25rem;
+  color: rgba(var(--color-foreground), 0.78);
+  text-decoration: none;
+  transition: color var(--duration-short) ease;
+}
+
+.policies li a:hover {
+  color: rgb(var(--color-foreground));
+  text-decoration: underline;
+}
+
+.footer__bottom-right {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.8rem;
+}
+
+.footer__payment {
+  margin: 0;
+}
+
+.footer__payment .list-payment {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.bb-payment-pill {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--bb-radius-card, 4px);
+  overflow: hidden;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.12);
+  transition: transform var(--duration-short) ease;
+}
+
+.bb-payment-pill:hover {
+  transform: translateY(-1px);
+}
+
+.footer__ssl-badge {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1.15rem;
+  font-weight: 500;
+  color: rgba(var(--color-foreground), 0.78);
+}
+
+@media screen and (max-width: 749px) {
+  .footer__content-bottom-wrapper {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 2rem;
+  }
+
+  .footer__bottom-left {
+    justify-content: center;
+  }
+
+  .footer__bottom-right {
+    align-items: center;
+    width: 100%;
+  }
+
+  .footer__payment .list-payment {
+    justify-content: center;
+  }
+}

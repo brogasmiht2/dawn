@@ -1,13 +1,4 @@
-/*
- * ------------------------------------------------------------
- * IMPORTANT: The contents of this file are auto-generated.
- *
- * This file may be updated by the Shopify admin theme editor
- * or related systems. Please exercise caution as any changes
- * made to this file may be overwritten.
- * ------------------------------------------------------------
- */
-{
+﻿{
   "sections": {
     "hero_banner": {
       "type": "image-banner",
@@ -379,35 +370,58 @@
         "padding_bottom": 48
       }
     },
-    "email_signup": {
-      "type": "newsletter",
+    "faq_accordion": {
+      "type": "faq-accordion",
       "blocks": {
-        "heading": {
-          "type": "heading",
+        "faq_1": {
+          "type": "faq_item",
           "settings": {
-            "heading": "Join the Urban Garden Club",
-            "heading_size": "h1"
+            "question": "Will the railing planters fit my apartment balcony railing?",
+            "answer": "<p>Yes. Our universal mounting brackets adjust easily to fit round, square, and flat metal or wood railings from 1.5 inches up to 4.5 inches wide. They include non-marking rubber pads so your rental property is never scratched.</p>"
           }
         },
-        "paragraph": {
-          "type": "paragraph",
+        "faq_2": {
+          "type": "faq_item",
           "settings": {
-            "text": "<p>Receive seasonal small-space planting calendars, balcony care tips, and exclusive new releases.</p>"
+            "question": "How do self-watering planters prevent dripping on downstairs neighbors?",
+            "answer": "<p>Every BalconyBloomCo planter features an internal overflow reservoir with an integrated drainage plug. Excess water collects safely in the bottom basin where plants draw it up through capillary action, completely eliminating dirty drips onto balconies below.</p>"
           }
         },
-        "email_form": {
-          "type": "email_form",
-          "settings": {}
+        "faq_3": {
+          "type": "faq_item",
+          "settings": {
+            "question": "Are these planters safe for apartment balcony weight limits?",
+            "answer": "<p>Absolutely. We use lightweight aerospace-grade aluminum and durable composite resins that weigh up to 60% less than traditional terracotta or concrete, while retaining high structural rigidity against strong wind gusts.</p>"
+          }
+        },
+        "faq_4": {
+          "type": "faq_item",
+          "settings": {
+            "question": "Can they stay outside during freezing winter weather?",
+            "answer": "<p>Yes. Our planters are frost-resistant down to -20Â°F (-28Â°C) and will not crack or become brittle under freezing conditions. We recommend emptying excess standing water before the first freeze.</p>"
+          }
+        },
+        "faq_5": {
+          "type": "faq_item",
+          "settings": {
+            "question": "What is the 30-Day Urban Thriving Guarantee?",
+            "answer": "<p>We want you to love your balcony oasis. If your products do not fit your space or make gardening easier within 30 days, reach out to our team for hassle-free returns or exchanges.</p>"
+          }
         }
       },
       "block_order": [
-        "heading",
-        "paragraph",
-        "email_form"
+        "faq_1",
+        "faq_2",
+        "faq_3",
+        "faq_4",
+        "faq_5"
       ],
       "settings": {
-        "color_scheme": "scheme-3",
-        "full_width": false,
+        "subheading": "Got Questions?",
+        "title": "Frequently Asked Questions",
+        "heading_size": "h1",
+        "description": "<p>Common answers regarding apartment weight limits, railing mounts, drainage care, and our urban guarantee.</p>",
+        "color_scheme": "scheme-1",
         "padding_top": 56,
         "padding_bottom": 56
       }
@@ -421,6 +435,6 @@
     "editorial_story",
     "gardening_goals",
     "gardening_inspiration",
-    "email_signup"
+    "faq_accordion"
   ]
 }

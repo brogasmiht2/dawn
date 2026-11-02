@@ -14,22 +14,22 @@
         "footer_menu_shop": {
           "type": "link_list",
           "settings": {
-            "heading": "Shop Essentials",
+            "heading": "Shop Balcony",
             "menu": "main-menu"
           }
         },
         "footer_menu_care": {
           "type": "link_list",
           "settings": {
-            "heading": "Urban Garden Care",
+            "heading": "Help & Care",
             "menu": "footer"
           }
         },
-        "footer_text_contact": {
-          "type": "text",
+        "footer_newsletter": {
+          "type": "newsletter",
           "settings": {
-            "heading": "BalconyBloomCo Promise",
-            "subtext": "<p>Need help choosing the right planter for your railing size? Our urban garden team is happy to assist at hello@balconybloomco.com</p>"
+            "heading": "Join the Urban Garden Club",
+            "subtext": "<p>Enjoy 10% off your first order, plus seasonal balcony growing tips and exclusive small-batch releases.</p>"
           }
         }
       },
@@ -37,13 +37,22 @@
         "brand_info",
         "footer_menu_shop",
         "footer_menu_care",
-        "footer_text_contact"
+        "footer_newsletter"
       ],
       "settings": {
         "color_scheme": "scheme-3",
-        "newsletter_enable": false,
+        "show_trust_bar": true,
+        "trust_heading_1": "Free Carbon-Neutral Shipping",
+        "trust_text_1": "On qualifying orders over $50",
+        "trust_heading_2": "30-Day Space-Fit Guarantee",
+        "trust_text_2": "Love your setup or return hassle-free",
+        "trust_heading_3": "Sustainably Engineered",
+        "trust_text_3": "UV-stabilized, non-toxic & recyclable",
+        "trust_heading_4": "Urban Plant Care Support",
+        "trust_text_4": "Balcony gardening specialists 7 days",
+        "newsletter_enable": true,
         "newsletter_heading": "Join the Urban Garden Club",
-        "enable_follow_on_shop": true,
+        "enable_follow_on_shop": false,
         "show_social": true,
         "enable_country_selector": false,
         "enable_language_selector": false,
